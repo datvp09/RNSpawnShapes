@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {Text, View, StatusBar, UIManager} from 'react-native';
+import {StatusBar, UIManager} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {getActiveRouteName, isAndroid} from '@utils';
 import {navService} from '@core/services';
@@ -13,7 +13,6 @@ if (isAndroid && UIManager.setLayoutAnimationEnabledExperimental) {
 const App = () => {
   const navigationRef = useRef();
   const routeNameRef = useRef(); // use to store previous route name
-  const modalRef = useRef();
 
   useEffect(() => {
     if (navigationRef.current) {
@@ -23,8 +22,6 @@ const App = () => {
       navService.setNavigator(navigationRef.current);
     }
   }, []);
-
-  console.log('root-0', RootNavigator);
 
   return (
     <SafeAreaProvider>

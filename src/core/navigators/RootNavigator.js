@@ -1,12 +1,5 @@
-import React, {createContext, useState} from 'react';
-import {Text, View} from 'react-native';
-import {
-  createStackNavigator,
-  CardStyleInterpolators,
-  HeaderBackButton,
-} from '@react-navigation/stack';
+import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen, SharedTransitionIconScreen} from '@screens';
 import {Icon} from 'react-native-elements';
 import {
   ROUTE_SQUARES,
@@ -19,33 +12,7 @@ import {
 } from '@utils';
 import {AllScreen, TriangleScreen, CircleScreen, SquareScreen} from '@screens';
 
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
-// const SourceContext = createContext({
-//   source: '',
-// });
-
-const SquareStack = () => (
-  <Stack.Navigator>
-    <Stack.Screen name={'Squares'} component={SquareScreen} />
-  </Stack.Navigator>
-);
-const CircleStack = () => (
-  <Stack.Navigator>
-    <Stack.Screen name={'Circles'} component={CircleScreen} />
-  </Stack.Navigator>
-);
-const TriangleStack = () => (
-  <Stack.Navigator>
-    <Stack.Screen name={'Triangles'} component={TriangleScreen} />
-  </Stack.Navigator>
-);
-const AllStack = () => (
-  <Stack.Navigator>
-    <Stack.Screen name={'All'} component={AllScreen} />
-  </Stack.Navigator>
-);
 
 const Router = () => {
   const tabBarOptions = {
@@ -82,17 +49,9 @@ const Router = () => {
             <Icon
               name={iconName}
               color={focused ? activeColor : inactiveColor}
-              // color={'white'}
-              // style={{marginRight: 10}}
-              // onPress={() => {
-              //   console.log('source: ', route.params?.source);
-              //   setSource(route.params?.source);
-              //   setIsModalVisible(true);
-              // }}
             />
           );
         },
-        // headerTruncatedBackTitle: intl.formatMessage({id: 'button.back'}),
       })}>
       <Tab.Screen
         name={ROUTE_SQUARES}
@@ -115,46 +74,6 @@ const Router = () => {
         component={AllScreen}
       />
     </Tab.Navigator>
-    // <Stack.Navigator
-    //   screenOptions={({route}) => ({
-    //     gestureEnabled: false,
-    //     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-    //     headerTitleStyle: {color: 'white'},
-    //     headerStyle: {
-    //       backgroundColor: 'dodgerblue',
-    //     },
-    //     headerBackTitleStyle: {color: 'white'},
-    //     headerTintColor: 'white',
-    //     headerRight: () => (
-    //       <Icon
-    //         name={'info'}
-    //         color={'white'}
-    //         style={{marginRight: 10}}
-    //         onPress={() => {
-    //           console.log('source: ', route.params?.source);
-    //           setSource(route.params?.source);
-    //           setIsModalVisible(true);
-    //         }}
-    //       />
-    //     ),
-    //   })}
-    //   initialRouteName={'HomeScreen'}>
-    //   <Stack.Screen
-    //     name="HomeScreen"
-    //     component={HomeScreen}
-    //     options={{
-    //       title: 'Animation Playground',
-    //       headerRight: null,
-    //     }}
-    //   />
-    //   <Stack.Screen
-    //     name="SharedTransitionIconScreen"
-    //     component={SharedTransitionIconScreen}
-    //     options={{
-    //       title: 'Shared Transition Icon',
-    //     }}
-    //   />
-    // </Stack.Navigator>
   );
 };
 

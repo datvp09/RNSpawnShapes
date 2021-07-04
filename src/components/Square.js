@@ -1,10 +1,9 @@
-import React, {useRef} from 'react';
-import {View, Image, StyleSheet} from 'react-native';
+import React from 'react';
+import {View, StyleSheet} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import {shadow} from '@utils';
 
 const Square = ({size = 100, imageSource = '', color = 'red'}) => {
-  console.log('square-receive', size, imageSource, color);
   return (
     <View
       style={[
@@ -15,15 +14,13 @@ const Square = ({size = 100, imageSource = '', color = 'red'}) => {
           backgroundColor: imageSource == '' ? color : 'transparent',
         },
       ]}>
-      {/* {imageSource != '' && (
-        )} */}
-      <FastImage
-        source={{
-          uri: imageSource,
-        }}
-        resizeMode={'cover'}
-        style={styles.flex}
-      />
+      {imageSource != '' && (
+        <FastImage
+          source={{uri: imageSource}}
+          resizeMode={'cover'}
+          style={styles.flex}
+        />
+      )}
     </View>
   );
 };

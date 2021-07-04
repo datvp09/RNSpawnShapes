@@ -5,8 +5,8 @@ const IMAGE_URL =
   'https://www.colourlovers.com/api/patterns/random?format=json';
 const SMALLEST_SCREEN_PERCENT = 10;
 const BIGGEST_SCREEN_PERCENT = 45;
-const ITEMS_EACH_FETCH = 20;
-const ITEMS_LEFT_TO_FETCH_AGAIN = 10;
+const ITEMS_EACH_FETCH = 10;
+const ITEMS_LEFT_TO_FETCH_AGAIN = 5;
 const {height, width} = Dimensions.get('screen');
 const isiOS = Platform.OS == 'ios';
 const isAndroid = Platform.OS == 'android';
