@@ -1,0 +1,4 @@
+export const ROUTE_SQUARES = 'ROUTE_SQUARES';
+export const ROUTE_CIRCLES = 'ROUTE_CIRCLES';
+export const ROUTE_TRIANGLES = 'ROUTE_TRIANGLES';
+export const ROUTE_ALL = 'ROUTE_ALL';
