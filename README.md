@@ -9,9 +9,9 @@ This app runs on React Native v0.64.2, React v17.0.1 with features:<br />
 * Pan or drag the shapes around
 * Shake device to clear all shapes
 
-Screenshots<br />
-![Screenshot](screenshot.png)<br />
-![Screenshot](screenshot.png)
+<br />Screenshots<br /><br />
+<img src="screenshot-1.png" height="600">
+<img src="screenshot-2.png" height="600"><br /><br />
 
 Try it out at<br />
 https://i.diawi.com/TpHuV1
